@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% set active_page = "translator" %}
+
+{% block header %}
+  {% include "header.html" %}
+{% endblock %}
+
+{% block main %}
+
+<section class="otherThanHomeCtn translationPage">
+
+  <img src="{{url_for('static', filename='images/sign3.png')}}" alt="" aria-hidden="true" class="gestureHand"/>
+  
+
+  {% include "stream.html" %}
+
+  <h1>Translator</h1>
+
+  <div class="translationInfo">
+
+    <h4>JSL to Text</h4>
+    <p>Using your device's camera or video upload, SignSync captures live sign language gestures and displays the corresponding English text translation in real time.</p>
+
+  </div>
+
+  
+  <div class="translationCtn">
+
+    <form method="POST" action="{{ url_for('processUpload') }}" enctype="multipart/form-data" class="uploadForm">
+      
+      {% include 'flash_messages.html' %}
+
+      {{ uploadForm.csrf_token }}
+
+      <label>{{ uploadForm.video.label}} <i data-lucide="video"></i></label>
+
+      <div class="formInput">
+        {{ uploadForm.video}}
+    
+        <button>
+          <i data-lucide="upload"></i>
+          Upload
+        </button>
+      </div>
+
+    </form>
+    
+    <p>Translated Video</p>
+    <div class="translation">
+      {% if scrollTo == "videoUpload" and translation %}
+        <span class="vidUploadTranslation">{{translation}}</span>
+      {% else %} 
+        <span class="greyOutText">
+          Ready to translate your video upload
+        </span>
+      {% endif %} 
+    </div>
+  </div>
+  
+
+  <div class="textVideoCtn">
+
+    <div>
+      <div class="translationInfo">
+        <h4>Text to JSL</h4>
+        <p>Using our extensive JSL database, SignSync accepts English words and phrases, and displays the corresponding sign language gestures.</p>
+      </div>
+      
+      <form method="POST" action="{{ url_for('processSearch') }}">
+        {{ searchForm.csrf_token }}
+        
+        <span>
+          
+          {{ searchForm.select_field.label }}
+          <i data-lucide="text-search"></i>
+        </span>
+        
+    
+        <div class="searchForm">
+            {{ searchForm.select_field(class_='select') }}
+            <button type="submit">
+                <i data-lucide="rocket"></i> 
+                Enter
+            </button>
+        </div>
+      </form>
+    
+
+    </div>
+
+    {% if scrollTo == "search" and translation %}
+      <video muted autoplay controls>
+        <source src="{{ url_for('static', filename='videos/' + translation + '.mov') }}">
+        <!-- <source src="{{ url_for('static', filename='videos/bannerVid.mp4') }}"> -->
+      </video>    
+    {% endif %} 
+
+    
+  </div>
+
+  
+  
+</section>
+{% endblock %}
+
+
+{% block js %}
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+  
+    const scrollTo = params.get('scrollTo') || '';
+
+    
+    if (scrollTo === 'search') {
+        const element = document.querySelector('.textVideoCtn');
+        element.scrollIntoView({ behavior: 'smooth' });
+        
+    }
+
+  </script>
+{% endblock %}
+

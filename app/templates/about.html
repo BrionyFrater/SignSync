@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% set active_page = "about" %}
+
+{% block header %}
+  {% include "header.html" %}
+{% endblock %}
+
+{% block main %}
+
+
+<section class="otherThanHomeCtn aboutPageCtn">
+
+<h1>About Us</h1>
+
+  <div class="aboutInfoCtn">
+      <div>
+        <h5>Hi <i data-lucide="hand" class="wave"></i> We are Gesture Creators &copy;</h5>
+        <div class="icons">
+          <i data-lucide="hand"></i>
+          <i data-lucide="hand-metal"></i>
+          <i data-lucide="handshake"></i>
+        </div>
+
+        <p>
+          We're a team passionate about advancing communication through innovative technology. Our journey started with a simple idea: to connect  sign language with spoken language, making communication more accessible for all.
+        </p>
+
+        <p>
+          As part of our capstone project, we are proud to introduce SignSync, an AI-powered Jamaican Sign Language (JSL) Translator. This tool enables seamless interaction between signers and non-signers, regardless of their proficiency in JSL. Collaboration is central to our work; we have consulted with organizations like the Jamaica Association for the Deaf to ensure that SignSync accurately interprets JSL. 
+        </p>
+
+        <p class="lastParaAbout">
+          Together, let's create a world where communication knows no limits.
+        </p>
+      </div>
+
+  </div>
+
+</section>
+
+{% endblock %}
+

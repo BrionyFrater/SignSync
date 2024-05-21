@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% set active_page = "resources" %}
+
+
+{% block header %}
+  {% include "header.html" %}
+{% endblock %}
+
+{% block main %}
+
+<section class="otherThanHomeCtn resourcePage">
+  <h1>Resources</h1>
+  <p>Here are some helpful JSL resources.</p>
+
+
+  <div class="jamdeafContact">
+    <p>Connect with our consultants, JamDeaf, for more information about JSL.</p>
+    <a href="https://www.jamdeaf.org.jm/about-us/contact-data" class="button-link">
+      <span>Connect with JamDeaf<i data-lucide="arrow-up-right"></i></span>
+    </a>
+  </div>
+
+  <div class="grid">
+    <div class="courses">
+      <a href="https://lms.jamdeaf.org.jm/course/index.php?categoryid=4">
+        Courses
+      </a>
+    </div>
+
+    <div class="research">
+      <a href="https://lms.jamdeaf.org.jm/course/view.php?id=12">
+        Academic Research
+      </a>
+    </div>
+
+    <div class="games">
+      <a href="https://lms.jamdeaf.org.jm/course/view.php?id=11">
+        Games
+      </a>
+    </div>
+
+    <div class="vocab">
+      <a href="https://lms.jamdeaf.org.jm/mod/glossary/view.php?id=135">
+        Vocabulary
+      </a>
+    </div>
+
+    <div class="terms">
+      <a href="https://www.youtube.com/watch?v=n3-Oqgiou9g">
+        Terminology
+      </a>
+    </div>
+
+  </div>
+
+
+</section>
+
+{% endblock %}

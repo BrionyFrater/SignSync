@@ -1,0 +1,16 @@
+click==8.0.3
+Flask==2.2.2
+gunicorn==20.1.0
+importlib-metadata==6.0.0
+itsdangerous==2.0.1
+Jinja2==3.0.3
+MarkupSafe==2.1.2
+python-dotenv==0.21.1
+Werkzeug==2.2.2
+zipp==3.12.1
+WTForms==3.0.1
+Flask-WTF==1.2.1
+mediapipe==0.10.14 
+opencv-python== 4.9.0.80
+keras== 2.15.0
+tensorflow==2.15.0

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% set active_page = "home" %}
+
+{% block header %}
+  {% include "headerHome.html" %}
+{% endblock %}
+
+{% block main %}
+
+
+<section class="homeBannerCtn">
+  
+  <video muted autoplay loop class="bannerVid" aria-hidden="true">
+    <source src="{{url_for('static', filename='/videos/bannerVidWideAlt.mp4')}}"/>
+  </video>
+  
+  
+
+</section>
+
+<section class="bannerInfo">
+
+  
+    <h3>HI,  WE&apos;RE</h3>
+    <h1>GESTURE CREATORS</h1>
+  
+    <p>We are proud to introduce SignSync&TRADE;, our AI-powered Jamaican Sign Language (JSL) Translator. It was designed to bridge communication barriers and empower deaf individuals.</p>
+
+    <a href="{{ url_for('translator') }}" class="button-link">
+        <span>Translate</span>
+    </a>
+
+</section>
+
+<section class="underBanner">
+
+  <div>
+
+
+    <h5>The Challenge</h5>
+    <h4>Why we made SignSync</h4>
+    
+    <p>
+      With no reliable JSL translation tool available, communication barriers persist between deaf and hearing individuals. Existing technologies lack the capability to accurately translate Jamaican Sign Language into English—until now.
+    </p>
+
+  </div>
+
+  <img src="{{url_for('static', filename='/images/signLaptop2.png')}}" alt="Man signing to laptop screen">
+
+
+  
+  
+</section>
+
+
+<section class="solution">
+  <div>
+    <div class="circle"></div>
+    <p>
+      SignSync uses Artificial Intelligence to accurately interpret JSL in real time by capturing live sign language gestures through your camera and displaying the English translation instantly. SignSync also interprets English text into JSL gestures, based on a comprehensive database.
+    </p>
+  </div>
+</section>
+
+<section class="features">
+
+  <div>
+
+    <div class="lineCtn">
+      <div class="line"></div>
+    </div>
+
+    <h5>Communication</h5>
+    <h4>Key Features</h4>
+
+    <div class="featCtn">
+      <div class="feat">
+        <i data-lucide="clock"></i>
+        <h5>Real-time Translation</h5>
+  
+        <p>Capture sign language gestures live and display English translations immediately.</p>
+  
+      </div>
+
+      <div class="feat">
+        <i data-lucide="layers-3"></i>
+        <h5>Understands JSL's Complexity</h5>
+  
+        <p>Our AI understands the importance of facial expressions, eyebrow movements, and shoulder gestures, ensuring accurate interpretation.</p>
+  
+      </div>
+
+      <div class="feat">
+        <i data-lucide="hand-metal"></i>
+        <h5>JSL to Text</h5>
+  
+        <p>Uses AI model to instantly translate Jamaican Sign Language gestures into text with accuracy and real-time responsiveness.</p>
+  
+      </div>
+
+      <div class="feat">
+        <i data-lucide="text-cursor-input"></i>
+        
+        <h5>Text to JSL</h5>
+  
+        <p>Effortlessly convert text input into Jamaican Sign Language, sourced from our comprehensive database.</p>
+  
+      </div>
+  
+     
+
+    </div>
+    
+
+  </div>
+
+  <img src="{{url_for('static', filename='images/sign2.png')}}" alt="">
+</section>
+
+
+<section class="join">
+  <div class="lineCtn">
+    <div class="line"></div>
+  </div>
+
+  <h4>Start Translating Today</h4>
+  
+  <div>
+    <i data-lucide="sparkle" class="sparkle"></i>
+    <i data-lucide="sparkle" class="sparkle2"></i>
+    <p>
+      The AI behind SignSync was trained in collaboration with the Jamaica Association for the Deaf, ensuring accurate interpretation of JSL. Experience the future of inclusive communication with SignSync —we are here to connect.
+    </p>
+
+    
+  </div>
+  <a href="{{ url_for('translator') }}" class="button-link">
+    <span>Start Translating <i data-lucide="arrow-up-right"></i></span>
+  </a>
+</section>
+
+{% endblock %}
