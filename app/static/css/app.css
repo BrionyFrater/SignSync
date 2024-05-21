@@ -1113,7 +1113,7 @@ label{
         padding: 1.5rem;
     }
 }
-media (min-width: 1513px){
+@media (min-width: 1513px){
     .underBanner{
         margin-top: 15%;
     }
