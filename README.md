@@ -5,7 +5,7 @@
 
 We are proud to introduce SignSync, an AI-powered Jamaican Sign Language (JSL) Translator. Translate JSL to English, English to JSL, view resources, and more.
 
-##Our Demo
+## Our Demo
 https://gesturecreators.netlify.app/
 
 ## Our Team 
